@@ -1,7 +1,7 @@
 import cuid from 'cuid';
 
 export default function manageRestaurants(state = {restaurants: [], reviews: []}, action) {
-    let idx 
+    let idx
 
     switch(action.type) {
         case "ADD_RESTAURANT":
@@ -20,7 +20,7 @@ export default function manageRestaurants(state = {restaurants: [], reviews: []}
             idx = state.reviews.findIndex( review => review.id === action.review.id )
             return { ...state, reviews: state.reviews.slice(0, idx).concat(state.reviews.slice(idx + 1))}
 
-            default: 
+            default:
             return state
     }
 
