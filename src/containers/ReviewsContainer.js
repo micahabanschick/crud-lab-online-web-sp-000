@@ -15,4 +15,12 @@ class ReviewsContainer extends Component {
   }
 }
 
-export default ReviewsContainer;
+function mapStateToProps(state, ownProps) {
+  return { reviews: state.reviews.filter(review => review.restaurantId === ownProps.restaurantId) }
+}
+const mapDispatchToProps = dispatch => ({
+  addReview: review => dispatch({ type: "ADD_REVIEW", review }),
+  deleteReview: review => dispatch({ type: "DELETE_REVIEW", review})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewsContainer);
