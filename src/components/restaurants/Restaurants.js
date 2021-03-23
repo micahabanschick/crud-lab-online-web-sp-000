@@ -4,14 +4,14 @@ import Restaurant from './Restaurant'
 class Restaurants extends Component {
 
   renderRestaurants = () => {
-    return this.props.restaurants.map(restaurant => 
-      <Restaurant 
-        restaurant={restaurant} 
+    return this.props.restaurants.map(restaurant =>
+      <Restaurant
+        restaurant={restaurant}
         deleteRestaurant={this.props.deleteRestaurant}
       />
     )
   }
-  
+
   render() {
     return(
       <ul>
